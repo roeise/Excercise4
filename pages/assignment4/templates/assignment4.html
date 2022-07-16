@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>assignment4</title>
+    <script src={{url_for('assignment4.static', filename='JS/assignment4JS.js')}}></script>
+</head>
+<body>
+    {% include('header.html') %}
+    <hr>
+    <h1>Assignment 4</h1>
+    <hr>
+
+    <!--------------------------------INSERT--------------------------------->
+
+    <H3 style="color: darksalmon">Insertion Form</H3>
+    <h3>Insert new user</h3>
+    <form method="POST" action="/assignment4insert">
+        <input name="user_nickname" type="text" placeholder="enter nickname" required/>
+        <input name="user_email" type="text" placeholder="enter email" required/>
+        <input name="user_first_name" type="text" placeholder="enter first name" required/>
+        <input name="user_last_name" type="text" placeholder="Enter last name" required/>
+        <input name="user_password" type="text" placeholder="Enter Password" required/>
+        <input type="submit">
+    </form>
+    <hr>
+    <div>
+        {% if session['INSERTED'] %}
+            <h1>{{ session['insert_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+
+        <!--------------------------------UPDATE-------------------------------->
+
+    <H3 style="color: darksalmon">Update Form</H3>
+    <h3> Update user</h3>
+    <form method="POST" action="/assignment4update">
+        <input name="user_nickname" type="text" placeholder="enter nickname" required/>
+        <input name="user_email" type="text" placeholder="enter email" required/>
+        <input name="user_first_name" type="text" placeholder="enter first name" required/>
+        <input name="user_last_name" type="text" placeholder="Enter last name" required/>
+        <input name="user_password" type="text" placeholder="Enter Password" required/>
+        <input type="submit">
+    </form>
+    <hr>
+    <div>
+        {% if session['UPDATE'] %}
+            <h1>{{ session['update_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+
+        <!--------------------------------DELETE------------------------------>
+
+    <H3 style="color: darksalmon">Deletion Form</H3>
+    <h3>Delete user</h3>
+    <form method="POST" action="/assignment4delete">
+        <input name="user_nickname" type="text" placeholder="nickname to delete" required/>
+        <input type="submit">
+    </form>
+    <hr>
+        <div>
+        {% if session['DELETED'] %}
+            <h1>{{ session['delete_message'] | title() }}</h1>
+        {% endif %}
+    </div>
+
+
+   <h3 style="color: darksalmon">List of Users</h3>
+        {% for user in users %}
+            <div class="fill_details_box">
+                <li><b>User nickname:</b> {{ user.user_nickname }}, <b>User Name</b> :{{ user.user_first_name }} {{ user.user_last_name }},<b> Email:</b> {{ user.user_email }} <br><br></li>
+            </div>
+        {% endfor %}
+</body>
+</body>
+</html>

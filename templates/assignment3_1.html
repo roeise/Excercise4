@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+         <br>   <br>   <br>    <br>    <br>   <br>    <br> <br>   <br>
+    <hr>
+    <h1>:פרטי המשתמש</h1>
+    {% if user.gender=='f' %}
+        <h2 style="color: #2d212d">גברת {{ user.firstname|safe }} {{ user.lastname|safe }}:</h2>
+    {% else %}
+        <h2 style="color: #2d212d">מר {{ user.firstname|safe }} {{ user.lastname|safe }}</h2>
+    {% endif %}
+    <h2 style="color: #2d212d">:פרטיך האישיים (גיל, עיר, מדינה)</h2>
+    {% for detail in Details %}
+    <div style="color: #2d212d">{{ detail }} </div>
+    {% endfor %}
+
+    <h5>{{ 'if You HAVE PROBLEMS WITH YOUR SIGN-UP, contact us'|upper }}</h5>
+    <h6>{{ ''|default('DAN HELPDESK : 972-540005300', true) }}</h6>
+
+
+{% extends 'Home.html' %}
+{% block name %}
+         {{ super() }}
+        <h1 style="color: red">{{ newFeed }}</h1>
+{% endblock %}
+
+
+</body>
+
+</html>
+

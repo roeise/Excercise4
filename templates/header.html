@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+h1 {text-align: center;}
+a {font-family:Arial,garamond,serif;font-size:20px;font-style:inherit;text-size:20px; text-align: center;}
+div {text-align: center;}
+</style>
+
+<div class="header">
+    <link rel="stylesheet" href="..\static\global.css">
+    <script src="..\static\javaScriptBlin.js"></script>
+
+
+
+  {% if session['username'] %}
+    <h4>!Egy étvággyal - בתאבון ,{{ session['nickname'] }}</h4>
+{% endif %}
+
+    <a href="/assignment3_1" style="color:#6f42c1">assignment3_1,  </a>
+    <a href="/assignment3_2" style="color:#0b3d91">assignment3_2,  </a>
+    <a href="/assignment4" style="color:#6f42c1">assignment4_A,  </a>
+    <a href="/assignment4/outer_source" style="color:#0b3d91">assignment4_B,  </a>
+    <a href="/assignment4/users"style="color:#6f42c1">assignment4-Users  </a>
+    <a href="/assignment4_3/restapi/"style="color:#0b3d91">assignment4_C</a>
+
+</div>
+
+</head>
+
+
+
+
+
+

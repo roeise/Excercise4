@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<header>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\static\global.css">
+    <title>Home</title>
+    <script src="..\static\javaScriptBlin.js"></script>
+
+    <div id="container">
+        <h1 class="titles"> הבלינצ'ס ההונגרי </h1>
+        <audio class="audio-home" controls >
+            <source src="..\static\jazz_Song.mp3" type="audio/mp3">
+            audio.volume = 0.2;
+          </audio>
+    </div>
+
+    <nav id="sidenav">
+        <a href="./Home" id="home" class="currentpage">דף הבית</a>
+        <a href="./Contact_Us">צור קשר</a>
+    </nav>
+
+</header>
+
+<br>   <br>   <br>    <br>    <br>   <br>    <br> <br>   <br>
+
+<body>
+
+    <img id="blintchess" class="boxes" alt="blintchess" src="../static/blintchess.jpg"  style="object-fit:contain;
+    width:440px;
+    height:300px"/>  
+    <br>
+    <p font size="100">
+        מבחר מילויים לבחירה בבלינצ'ס ההונגרי המוכר והידוע של סבתא רוזליה ז"ל
+    <div>
+        <button class="button-85" role="button" onclick="switchToNugette()" >מילוי נוגט וקפה</button>
+        <button class="button-85" role="button" onclick="switchTocheese()">מילוי גבינה ופירות יער</button>
+        <button class="button-85" role="button" onclick="switchToCream()"> מילוי צימוקים וגבינת שמנת</button>
+        </div>
+    </p>
+
+
+    <div class="name-wrapper">
+{% block name %}
+        <h4>מדי שבוע עולים עדכונים חדשים באתר</h4>
+{% endblock %}
+      </div>
+
+{% extends 'Header.html' %}
+<p>
+        <br>   <br>   <br>
+    </p>
+
+</body> 

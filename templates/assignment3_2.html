@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+
+    <title>Forms</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\static\global.css">
+    <title>Home</title>
+    <script src="javaScriptBlin.js"></script>
+
+    <div id="container">
+        <h1 class="titles"> הבלינצ'ס ההונגרי </h1>
+        <audio class="audio-home" controls >
+            <source src="..\static\jazz_Song.mp3" type="audio/mp3">
+            audio.volume = 0.2;
+          </audio>
+    </div>
+
+    <nav id="sidenav">
+        <a href="./Home" id="home" class="currentpage">דף הבית</a>
+        <a href="./Contact_Us">צור קשר</a>
+    </nav>
+</header>
+
+
+<body>
+
+<br><br><br>
+<h1>Search Form</h1>
+<form method="GET" , action="/search">
+    <input name="searchinput" type="text" placeholder="Enter Search">
+    <input type="submit">
+</form>
+    <br>
+{% if searchIsfound %}
+    <img src="{{ searchIsfound.user_avatar }}" alt="Profile_Avatar"/>
+    <h3>{{ searchIsfound.user_first_name }} {{ searchIsfound.user_last_name }}</h3>
+    <h3>email: {{ searchIsfound.user_email }} </h3>
+{% elif search %}
+    {% for user in search %}
+        <img src="{{ user.user_avatar }}" alt="Profile_Avatar"style="width:100px;height:100px;"/>
+        <h3> Full Name: {{ user.user_first_name }} {{ user.user_last_name }} </h3>
+        <h3> Email: {{ user.user_email }} </h3>
+        <h3> Nickname:  {{ user.user_nickname }} </h3>
+        <hr style="width:50%;text-align:center">
+
+    {% endfor %}
+{% elif searchNotfound %}
+    <h1>{{ searchNotfound }}</h1>
+{% endif %}
+
+{% if session['username'] %}
+    <h2>!Egy étvággyal - בתאבון ,{{ session['nickname'] }}</h2>
+    <a href = "/logout">Log out</a><br>
+{% else %}
+
+
+    <h1>Registration Form</h1>
+    <form method="POST" , action="/register" >
+        <input name="username" type="text" placeholder="Enter UserName" required>
+        <input name="password" type="password" placeholder="Enter Password" required>
+        <input name="email" type="email" placeholder="Enter Email" required>
+        <input name="nickname" type="text" placeholder="Enter Nickname" required>
+        <input type="submit">
+    </form>
+{% endif %}
+
+</body>
+
+
+</html>

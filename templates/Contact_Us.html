@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<header>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="..\static\global.css">
+    <title>Contact_Us</title>
+    <script src="javaScriptBlin.js"></script>
+
+
+    <div id="container">
+      <h1 class="titles"> לבקשות ישירות </h1>
+      <audio class="audio-home" controls>
+          <source src="..\static\jazz_Song.mp3" type="audio/mp3">
+          audio.volume = 0.2;
+      </audio>
+    </div>
+
+
+    <nav id="sidenav">
+      <a href="./Home">דף הבית</a>
+      <a href="./Contact_Us" id="home" class="currentpage">צור קשר</a>
+    </nav>
+
+</header>
+
+<br>   <br>   <br> <br>   <br>   <br>    <br>    <br>   <br>    <br> <br>   <br>
+
+
+<body>
+
+  <div>
+<form class="boxes" action="URL">
+  <br>
+    <input type="text" id="CustomerName">
+    <lable for="CustomerName">שם מלא </lable>
+    <br><br>
+    <input type="date" id="orderDate">
+    <lable for ="orderDate">תאריך הזמנה</lable>
+    <br><br>
+    <input type="email" id="emailUser" maxlength="20">
+    <lable for ="emailUser">E-MAIL</lable>
+
+    <br><br>
+
+    <h3 >...אני מעוניין ב </h2> 
+
+
+    <lable for ="BlinchessCheese">(30₪) בלינצ'ס במילוי צימוקים וגבינת שמנת</lable>
+    <input name="product" value="30" type="checkbox" onclick="totalIt()" type="checkbox" id=BlinchessCheese>
+    <br>
+    <lable for ="BlinchessNugat">(35₪) בלינצ'ס במילוי נוגט וקפה</lable>
+    <input name="product" value="35" type="checkbox" onclick="totalIt()" id1=BlinchessNugat>
+    <br>
+
+    <lable for ="BlinchessNugat">(35₪)בלינצ'ס במילוי נוגט וקפה</lable>
+    <input name="product" value="35" type="checkbox" onclick="totalIt()" id1=BlinchessNugat>
+    <br>
+
+
+    <h3 >:מחיר משוער </h2> 
+    <input value="₪0.00" readonly="readonly" type="text" name="total" />
+
+    <br><br>
+    <label for="file">העלאת קופון</label>
+    <input type="file" id="file" name="file">
+    <br><br>
+    <br><br>
+    <input type="reset">
+    <input type="submit" value="הזמן">
+    <br><br>
+
+</form>
+</div>
+
+<br>
+<div> : סניפים  </div> 
+
+    
+  
+  <span><p>קרית גת</p></span>
+  <span><p>באר שבע</p></span>
+  <span><p>עומר</p></span>
+   
+  <br>
+
+  
+  <div> : מייל למענה  </div> 
+
+    <footer>
+        <p><a href="blinchessCheese@gmail.com">blinchessCheese@gmail.com</a></p>
+    </footer>
+
+
+
+{% extends 'header.html' %}
+
+</body>
+
+
+
+

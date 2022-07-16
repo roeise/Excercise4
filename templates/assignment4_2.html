@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title%}
+ ass4_2
+{% endblock %}
+
+{% block body %}
+    <script src="../static/fetch.js"></script>
+    <h3>Frontend</h3>
+<h3>User Number:<input type="number" id="input_number" name="user_num" placeholder="1-12"> <br></h3>
+    <input type="submit" onclick="getUsers()" value="Get User">
+    <div id="output"></div>
+
+
+<main>
+
+
+</main>
+    <hr>
+        <h3>Backend</h3>
+    <h3>User Number :<input type="number" id="input_number_backend" name="user_num_backend" placeholder="1-12"> <br></h3>
+        <input type="submit" onclick="getUsersFromBackend()" value="Get User">
+    <div id="output_backend"></div>
+<main id="main_backend">
+
+</main>
+    {% endblock %}
